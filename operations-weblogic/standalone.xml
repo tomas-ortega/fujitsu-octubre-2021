@@ -1,4 +1,5 @@
-<pre><datasource jndi-name="java:jboss/datasources/PruebaDS" pool-name="PruebaDS">
+<pre>
+<datasource jndi-name="java:jboss/datasources/PruebaDS" pool-name="PruebaDS">
     <connection-url>
         jdbc:mysql://localhost:3306/basededatos
     </connection-url>
@@ -10,4 +11,5 @@
 </datasource>
 <drivers>
    <driver name="mysql" module="com.mysql"/>
-</drivers></pre>
+</drivers>
+</pre>
