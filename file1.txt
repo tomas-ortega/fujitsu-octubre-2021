@@ -1,2 +1,1 @@
-Edito el fichero
-primera línea del fichero
+el fichero
