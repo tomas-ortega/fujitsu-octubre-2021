@@ -16,7 +16,6 @@
   failed_when: bd19_install_version.stderr != ""
   changed_when: false
   when: oracle_home_exists.stat.exists == true
-
 - name: "{{ playbook_filename }} : Imprimir versiones actuales"
   debug:
     msg:
