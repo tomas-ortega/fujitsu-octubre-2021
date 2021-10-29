@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  fujitsu_jenkins:
+    build:
+      context: ./fujitsu_jenkins
+    image: fujitsu/jenkins:lts
+    container_name: fujitsu_jenkins
+    restart: always
+    ports:
+      - "9000:8080"
+    volumes:
+      - fujitsu_jenkins:/var/jenkins_home
+
+volumes:
+  fujitsu_jenkins:
+    external: true
+    name: fujitsu_jenkins

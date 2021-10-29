@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('DEBUG') {
+            steps {
+                println "EMAIL_TO: " + "$EMAIL_TO"
+                println "SEND_EMAIL: " + "$SEND_EMAIL"
+            }
+        }
+        
+        stage('mvn test') {
+            steps {
+                script {
+                    println "Verify Test!!!"
+                    
+                    def emailto = "$EMAIL_TO"
+                    
+                    if (emailto == "m.tomas.ortega@gmail.com") {
+                        if ("$SEND_EMAIL" == "true") {
+                            println "Tomy"
+                        }
+                    } else {
+                        println "User not found!"
+                    }
+                }
+            }
+        }
+        
+        stage('mvn deploy') {
+            steps {
+                println "Verify Deploy!!!"
+            }
+        }
+    }
+    
+    post {
+        success {
+            script {
+                chuckNorris()
+                println "Nos vamos de copitas!"
+            }
+        }
+        
+        failure {
+            script {
+                chuckNorris()
+                println "Te voy a da una tunda con la mano abierta!"
+            }
+        }
+    }
+}
